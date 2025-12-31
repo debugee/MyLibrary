@@ -1,0 +1,12 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: @MY_LIB_NAME@
+Description: A shared library for @MY_LIB_NAME@
+Version: @PROJECT_VERSION@
+URL: 
+
+Libs: -L${libdir} -l@MY_LIB_NAME@
+Cflags: -I${includedir}
