@@ -4,7 +4,7 @@ project(MyProject VERSION 1.0 LANGUAGES CXX)
 
 set(MY_LIB_NAME MyLibrary)
 
-add_library(${MY_LIB_NAME} SHARED
+add_library(${MY_LIB_NAME} 
     src/mylibrary.cpp
     include/mylibrary.h
 )
