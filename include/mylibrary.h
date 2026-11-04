@@ -12,7 +12,11 @@ extern "C" {
     #define MY_LIBRARY_API __declspec(dllimport)
   #endif
 #else
-  #define MY_LIBRARY_API
+  #if defined(BUILDING_MY_LIBRARY) && (__GNUC__ >= 4 || defined(__clang__))
+    #define MY_LIBRARY_API __attribute__((visibility("default")))
+  #else
+    #define MY_LIBRARY_API
+  #endif
 #endif
 
 MY_LIBRARY_API

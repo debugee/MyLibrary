@@ -2,11 +2,13 @@ cmake_minimum_required(VERSION 3.20)
 
 project(MyProject VERSION 1.0 LANGUAGES CXX)
 
+set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+set(CMAKE_VISIBILITY_INLINES_HIDDEN ON)
+
 set(MY_LIB_NAME MyLibrary)
 
-add_library(${MY_LIB_NAME} 
+add_library(${MY_LIB_NAME} SHARED
     src/mylibrary.cpp
-    include/mylibrary.h
 )
 
 target_include_directories(${MY_LIB_NAME} PUBLIC
